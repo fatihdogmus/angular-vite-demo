@@ -5,7 +5,7 @@
   "prefix": "angular-vite-demo",
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:browser",
+      "executor": "@nxext/vite:build",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/vite-demo",
@@ -14,6 +14,8 @@
         "polyfills": "apps/vite-demo/src/polyfills.ts",
         "tsConfig": "apps/vite-demo/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
+        "configFile": "@nxext/vite/plugins/vite",
+        "frameworkConfigFile": "@nxext/angular/plugins/vite",
         "assets": [
           "apps/vite-demo/src/favicon.ico",
           "apps/vite-demo/src/assets"
@@ -55,7 +57,13 @@
       "defaultConfiguration": "production"
     },
     "serve": {
-      "executor": "@angular-devkit/build-angular:dev-server",
+      "executor": "@nxext/vite:dev",
+      "options":{
+        "outputPath": "dist/apps/tenmak",
+        "baseHref": "/",
+        "configFile": "@nxext/vite/plugins/vite",
+        "frameworkConfigFile": "@nxext/angular/plugins/vite"
+      },
       "configurations": {
         "production": {
           "browserTarget": "vite-demo:build:production"
