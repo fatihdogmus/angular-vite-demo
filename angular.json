@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "vite-demo": "apps/vite-demo",
+    "vite-demo-e2e": "apps/vite-demo-e2e"
+  }
+}
